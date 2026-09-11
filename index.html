@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Хор LARUS — женский хор, Москва</title>
+  <meta name="description" content="Женский хор LARUS под руководством Кристины Романовой. Концерты, набор в хор, новости коллектива.">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Загрузочный экран -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__half preloader__half--top"></div>
+    <div class="preloader__half preloader__half--bottom"></div>
+    <div class="preloader__content">
+      <svg class="preloader__mark" viewBox="0 0 64 64">
+        <rect x="2" y="2" width="60" height="60" rx="18" fill="#faf8f4"/>
+        <path d="M14 38 C21 25, 29 25, 32 33 C35 25, 43 25, 50 34"
+              stroke="#1d1a17" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+        <path d="M17 45 C27 51, 39 51, 47 43"
+              stroke="#1d1a17" stroke-width="4.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+        <path d="M32 12.6 c-1.6-2.6 -5.6-1.9 -5.6 1 c0 2.1 2.8 3.7 5.6 5.9 c2.8-2.2 5.6-3.8 5.6-5.9 c0-2.9 -4-3.6 -5.6-1 z"
+              fill="#1d1a17"/>
+      </svg>
+      <span class="preloader__name">LARUS</span>
+      <span class="preloader__sub">женский хор · Москва</span>
+      <span class="preloader__bar"><i></i></span>
+    </div>
+  </div>
+
+  <!-- Фоновые ноты по краям страницы -->
+  <div class="bg-decor" aria-hidden="true">
+    <span class="bg-note bg-note--1">♪</span>
+    <span class="bg-note bg-note--2">♫</span>
+    <span class="bg-note bg-note--3">♩</span>
+    <span class="bg-note bg-note--4">♪</span>
+  </div>
+
+  <!-- Полоса прогресса чтения -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Вертикальная подпись на левом краю -->
+  <div class="edge-rail" aria-hidden="true">
+    <span class="edge-rail__line"></span>
+    <span class="edge-rail__text">Хор LARUS · женский хор · Москва · Da capo al Cora</span>
+    <span class="edge-rail__note">♪</span>
+  </div>
+
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect x="2" y="2" width="60" height="60" rx="18" fill="#1d1a17"/>
+          <path d="M14 38 C21 25, 29 25, 32 33 C35 25, 43 25, 50 34"
+                stroke="#faf8f4" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+          <path d="M17 45 C27 51, 39 51, 47 43"
+                stroke="#faf8f4" stroke-width="4.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+          <path d="M32 12.6 c-1.6-2.6 -5.6-1.9 -5.6 1 c0 2.1 2.8 3.7 5.6 5.9 c2.8-2.2 5.6-3.8 5.6-5.9 c0-2.9 -4-3.6 -5.6-1 z"
+                fill="#faf8f4"/>
+        </svg>
+        <span class="logo__text">LARUS<small>женский хор · Москва</small></span>
+      </a>
+      <nav class="nav">
+        <a href="#about-conductor">Руководитель</a>
+        <a href="#choir">О хоре</a>
+        <a href="#concerts">События</a>
+        <a href="#join">Вступить</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a href="https://t.me/laruschoir" target="_blank" rel="noopener" class="btn btn--tg">Телеграм</a>
+      <button class="burger" id="burger" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- Мобильное меню -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#about-conductor">Руководитель</a>
+    <a href="#choir">О хоре</a>
+    <a href="#why">Почему LARUS</a>
+    <a href="#concerts">События</a>
+    <a href="#join">Вступить</a>
+    <a href="#gallery">Галерея</a>
+    <a href="#contacts">Контакты</a>
+    <a href="https://t.me/laruschoir" target="_blank" rel="noopener" class="btn btn--tg">Телеграм-канал</a>
+  </nav>
+
+  <!-- Первый экран -->
+  <section class="hero">
+    <!-- Декоративный нотный стан на фоне -->
+    <svg class="hero__staff" viewBox="0 0 520 300" aria-hidden="true">
+      <g fill="none" stroke="#1d1a17" stroke-width="1.4">
+        <path d="M0 40 H520 M0 80 H520 M0 120 H520 M0 160 H520 M0 200 H520"/>
+      </g>
+      <g fill="#1d1a17">
+        <ellipse cx="110" cy="88" rx="14" ry="10" transform="rotate(-16 110 88)"/>
+        <rect x="122" y="30" width="4" height="56" rx="2"/>
+        <ellipse cx="255" cy="150" rx="14" ry="10" transform="rotate(-16 255 150)"/>
+        <rect x="267" y="92" width="4" height="56" rx="2"/>
+        <ellipse cx="400" cy="70" rx="14" ry="10" transform="rotate(-16 400 70)"/>
+        <rect x="412" y="12" width="4" height="56" rx="2"/>
+      </g>
+    </svg>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="hero__kicker">Женский хор · Москва</p>
+        <h1 class="hero__title">
+          <span class="w" style="--wd:.1s"><i>Музыкальное</i></span>
+          <span class="w" style="--wd:.34s"><i>пространство</i></span><br>
+          <span class="w" style="--wd:.62s"><i>без</i></span>
+          <span class="w" style="--wd:.8s"><i>комплексов</i></span>
+        </h1>
+        <p class="hero__text">
+          Хор LARUS — концертирующий любительский коллектив под руководством
+          Кристины Романовой. Мы поём классику и современную музыку,
+          выступаем в лучших залах Москвы и уже открыли сезон 2026–2027
+          концертом в «Лужниках».
+        </p>
+        <div class="hero__actions">
+          <a href="#join" class="btn btn--primary">Вступить в хор</a>
+          <a href="#about-conductor" class="btn btn--ghost">О руководителе</a>
+        </div>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__photo hero__photo--main"><img src="images/hero1.jpg" alt=""></div>
+        <div class="hero__photo hero__photo--small"><img src="images/hero2.jpg" alt=""></div>
+        <div class="hero__chip">Набор 2026–2027 открыт&nbsp;&nbsp;♪</div>
+        <svg class="hero__badge" viewBox="0 0 120 120">
+          <defs>
+            <path id="circPath" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/>
+          </defs>
+          <circle cx="60" cy="60" r="59" fill="#faf8f4"/>
+          <circle cx="60" cy="60" r="59" fill="none" stroke="#1d1a17" stroke-opacity="0.12"/>
+          <g class="hero__badge-rotor">
+            <text font-size="9.5" letter-spacing="2.6" fill="#1d1a17" font-family="Inter, sans-serif" font-weight="600">
+              <textPath href="#circPath">ПУТЬ LARUS · ДА CAPO AL CORA · ЖЕНСКИЙ ХОР ·</textPath>
+            </text>
+          </g>
+          <g fill="none" stroke="#1d1a17" stroke-width="3" stroke-linecap="round">
+            <path d="M44 66 C50 57, 56 57, 60 62 C64 57, 70 57, 76 65"/>
+          </g>
+          <path d="M60 46 c-1.2-2 -4.2-1.4 -4.2 .8 c0 1.6 2.1 2.8 4.2 4.4 c2.1-1.6 4.2-2.8 4.2-4.4 c0-2.2 -3-2.8 -4.2-.8 z" fill="#1d1a17"/>
+        </svg>
+      </div>
+      <div class="hero__scroll" aria-hidden="true"><span></span></div>
+    </div>
+  </section>
+
+  <!-- О руководителе -->
+  <section id="about-conductor" class="section">
+    <div class="note-mark" aria-hidden="true">♪</div>
+    <div class="container section__grid">
+      <div class="portrait">
+        <img class="portrait__img portrait__img--front" src="images/conductor.jpg" alt="Кристина Романова — руководитель и дирижёр хора LARUS">
+        <img class="portrait__img portrait__img--back" src="images/kristina-mini.jpg" alt="" aria-hidden="true">
+        <span class="portrait__hint">наведите курсор ✦</span>
+      </div>
+      <div>
+        <p class="section__kicker">Руководитель и дирижёр</p>
+        <h2 class="section__title">Кристина Романова</h2>
+        <p>
+          Основатель и художественный руководитель хора LARUS. Ведёт канал
+          «Путь LARUS: хроники Романовой» — честные рассказы о жизни хора
+          изнутри: репетиции, концерты, победы и всё, что происходит
+          «за кулисами» большого звучания.
+        </p>
+        <p>
+          В команде с ней работают хормейстер <strong>Валентина Мальцева</strong>
+          и концертмейстер <strong>Ирина Муравьёва</strong>.
+        </p>
+        <ul class="facts">
+          <li><strong data-count="1">Лауреат</strong> I степени международного фестиваля «Поющие мосты» (Казань)</li>
+          <li><strong>«Stabat&nbsp;Mater»</strong> масштабная работа сезона 2025–2026</li>
+          <li><strong>«Лужники»</strong> открытие сезона 2026–2027</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- О хоре -->
+  <section id="choir" class="section section--soft">
+    <div class="container">
+      <p class="section__kicker">Коллектив</p>
+      <h2 class="section__title">О хоре</h2>
+      <p class="section__lead">
+        LARUS — это место, где поют по любви. В хоре есть три направления —
+        под любой уровень и любые цели, от первых шагов в пении до большого
+        концертного состава.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <div class="card__img"><img src="images/choir1.jpg" alt="Основной состава хора в чёрных платьях"></div>
+          <h3>Основной состав</h3>
+          <p>Для тех, кто уверенно поёт в ансамбле: регулярные репетиции, сложный репертуар и концерты.</p>
+        </div>
+        <div class="card">
+          <div class="card__img"><img src="images/choir2.jpg" alt="Вокальный ансамбль на репетиции"></div>
+          <h3>Вокальный ансамбль</h3>
+          <p>Компактный формат: глубокая проработка партий, разные стили, больше внимания каждому голосу.</p>
+        </div>
+        <div class="card">
+          <div class="card__img"><img src="images/choir3.jpg" alt="Репетиция хора для новичков"></div>
+          <h3>Хор для новичков</h3>
+          <p>Если давно хотелось петь, но боялись начать: основы строя и интонации, простые партии, поддержка коллектива.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Почему LARUS: фото-карточки -->
+  <section id="why" class="section">
+    <div class="container">
+      <p class="section__kicker">Почему LARUS</p>
+      <h2 class="section__title">Что вы здесь найдёте</h2>
+      <div class="photo-cards">
+        <article class="photo-card sr" style="--d:0s">
+          <div class="photo-card__img"><img src="images/why1.jpg" alt="Хор LARUS на концерте в зале"></div>
+          <div class="photo-card__body">
+            <h3>Концерты</h3>
+            <p>Выступаем на лучших концертных площадках Москвы — от камерных залов до «Лужников».</p>
+          </div>
+        </article>
+        <article class="photo-card sr" style="--d:.15s">
+          <div class="photo-card__img"><img src="images/why2.jpg" alt="Хор LARUS на выезде, в парке"></div>
+          <div class="photo-card__body">
+            <h3>Гастроли и фестивали</h3>
+            <p>Поездки по стране, участие в конкурсах и открытых сценах — недавно привезли «Лауреата I степени» из Казани.</p>
+          </div>
+        </article>
+        <article class="photo-card sr" style="--d:.3s">
+          <div class="photo-card__img"><img src="images/why3.jpg" alt="Участницы хора обнимаются в кругу"></div>
+          <div class="photo-card__body">
+            <h3>Свои люди</h3>
+            <p>Петь можно без опыта — главное желание. Здесь вас научат и примут: коллектив становится семьёй.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- События -->
+  <section id="concerts" class="section">
+    <div class="note-mark note-mark--left" aria-hidden="true">♪</div>
+    <div class="container">
+      <p class="section__kicker">Афиша и новости</p>
+      <h2 class="section__title">Что происходит</h2>
+
+      <div class="event event--accent">
+        <div class="event__date"><span class="event__day">16</span><span class="event__month">дек</span></div>
+        <div>
+          <h3>Welcome to Silent Hill <span class="badge-premiere">премьера</span></h3>
+          <p class="event__place">Центральный Дом актёра · 16 декабря</p>
+          <p>Музыка Акиры Ямаоки из легендарной серии игр вместе с симфоническим
+          оркестром Mendeleev Filarmonica, рок-бендом и солистами —
+          Марией Лагерфельд, Владой Баязитовой, Анной Поздеевой и Евгенией Алексеенко.</p>
+          <p class="event__extra">Дирижёр и аранжировки — Евгений Рубцов · ведущий — Игорь Рубцов</p>
+        </div>
+      </div>
+
+      <div class="event">
+        <div class="event__date"><span class="event__day">2027</span><span class="event__month">сезон</span></div>
+        <div>
+          <h3>Сезон 2026–2027 открыт!</h3>
+          <p class="event__place">Стадион «Лужники» · уже выступили</p>
+          <p>Гастроли в другие города, залы с исключительной акустикой и большие проекты с солистами и оркестром — впереди насыщенный год. Следите за анонсами в телеграме.</p>
+        </div>
+      </div>
+
+      <p class="archive__title">Как это было</p>
+      <ul class="archive">
+        <li><strong>Июнь 2026</strong> — сольный концерт «Тепло голосов» в Антарес Холле: «Stabat Mater» и любимые произведения из репертуара.</li>
+        <li><strong>Май 2026</strong> — музыкально-драматургический вечер «По страницам военной памяти» в Особняке Носова.</li>
+        <li><strong>Июнь 2026</strong> — летний хоровой интенсив «Поём вместе, хором!» и новые участницы в основном составе.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Вступить в хор -->
+  <section id="join" class="section section--soft">
+    <div class="container">
+      <div class="join__panel">
+        <span class="join__note join__note--1" aria-hidden="true">♪</span>
+        <span class="join__note join__note--2" aria-hidden="true">♫</span>
+        <span class="join__note join__note--3" aria-hidden="true">♪</span>
+
+        <div class="eq" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <p class="section__kicker">Набор открыт</p>
+        <h2 class="section__title">Хочешь петь вместе с нами?</h2>
+        <p class="section__lead">
+          Мы не ждём, что вы придёте «уже готовым». Заполните короткую анкету —
+          мы подскажем, какое направление подойдёт именно вам, и пригласим
+          на пробную репетицию. Без обязательств и стресса.
+        </p>
+        <div class="hero__actions">
+          <a href="https://forms.gle/uyiLERGbSSLDqjfHA" target="_blank" rel="noopener" class="btn btn--inverse">Заполнить анкету</a>
+          <a href="https://t.me/laruschoir" target="_blank" rel="noopener" class="btn btn--outline">Написать в телеграм</a>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <span class="step__num">1</span>
+            <span class="step__text">Заполните короткую анкету</span>
+          </div>
+          <span class="step__arrow" aria-hidden="true">→</span>
+          <div class="step">
+            <span class="step__num">2</span>
+            <span class="step__text">Приходите на пробную репетицию</span>
+          </div>
+          <span class="step__arrow" aria-hidden="true">→</span>
+          <div class="step">
+            <span class="step__num">3</span>
+            <span class="step__text">Пойте на большой сцене</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Галерея -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <p class="section__kicker">Галерея</p>
+      <h2 class="section__title">Фото и видео</h2>
+      <p class="section__lead">
+        Концерты, гастроли и жизнь хора — кадры из нашего телеграм-канала.
+      </p>
+      <div class="gallery">
+        <div class="gallery__item"><img src="images/gallery1.jpg" alt="Женский хор LARUS — студийное фото в чёрных платьях"></div>
+        <div class="gallery__item"><img src="images/gallery2.jpg" alt="Хор LARUS на сцене в сценическом свете"></div>
+        <div class="gallery__item"><img src="images/gallery3.jpg" alt="Хор LARUS в концертном зале"></div>
+        <div class="gallery__item"><img src="images/gallery4.jpg" alt="Участницы хора на смотровой площадке над городом"></div>
+        <div class="gallery__item"><img src="images/gallery5.jpg" alt="Хор LARUS у Казанского собора"></div>
+        <div class="gallery__item"><img src="images/gallery6.jpg" alt="Хор LARUS в фирменных футболках у воды"></div>
+        <div class="gallery__item"><img src="images/gallery7.jpg" alt="Участницы хора на пляже с флагом LARUS"></div>
+        <div class="gallery__item"><img src="images/gallery8.jpg" alt="Скрипачка на концерте хора LARUS"></div>
+        <div class="gallery__item"><img src="images/gallery9.jpg" alt="Солистка в белом платье на фольклорной сцене"></div>
+        <div class="gallery__item"><img src="images/gallery10.jpg" alt="Хор LARUS в особняке после концерта"></div>
+        <div class="gallery__item"><img src="images/gallery11.jpg" alt="Хор LARUS у красного рояля"></div>
+        <div class="gallery__item"><img src="images/gallery12.jpg" alt="Концерт Welcome to Silent Hill — красное сценическое освещение"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Цитата на фоне концерта -->
+  <section class="band" aria-label="Цитата">
+    <div class="container band__inner">
+      <blockquote class="band__quote">«Где слова бессильны,<br>говорит музыка»</blockquote>
+      <p class="band__author">Пётр Ильич Чайковский</p>
+      <a href="#join" class="btn btn--inverse">Хочу петь с вами</a>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contacts" class="section section--soft">
+    <div class="container">
+      <p class="section__kicker">Контакты</p>
+      <h2 class="section__title">Будем на связи</h2>
+      <div class="contacts">
+        <a href="https://t.me/laruschoir" target="_blank" rel="noopener" class="contact">
+          <span class="contact__icon">✈️</span>
+          <span><strong>@laruschoir</strong><br>новости и анонсы первыми</span>
+        </a>
+        <a href="https://forms.gle/uyiLERGbSSLDqjfHA" target="_blank" rel="noopener" class="contact">
+          <span class="contact__icon">📝</span>
+          <span><strong>Анкета в хор</strong><br>пробная репетиция без обязательств</span>
+        </a>
+        <div class="contact">
+          <span class="contact__icon">📍</span>
+          <span><strong>Антарес Холл</strong><br>Москва, Окружной проезд, 18</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <svg class="footer__mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="2" y="2" width="60" height="60" rx="18" fill="#faf8f4"/>
+            <path d="M14 38 C21 25, 29 25, 32 33 C35 25, 43 25, 50 34"
+                  stroke="#1d1a17" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+            <path d="M17 45 C27 51, 39 51, 47 43"
+                  stroke="#1d1a17" stroke-width="4.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+            <path d="M32 12.6 c-1.6-2.6 -5.6-1.9 -5.6 1 c0 2.1 2.8 3.7 5.6 5.9 c2.8-2.2 5.6-3.8 5.6-5.9 c0-2.9 -4-3.6 -5.6-1 z"
+                  fill="#1d1a17"/>
+          </svg>
+          <span class="footer__name">LARUS</span>
+        </div>
+        <p class="footer__about">
+          Женский хор под руководством Кристины Романовой.
+          Поём классику и современную музыку, выступаем на лучших
+          сценах Москвы и гастролируем.
+        </p>
+        <a href="https://t.me/laruschoir" target="_blank" rel="noopener" class="footer__tg">
+          <span class="footer__tg-icon">✈</span> Подписаться на канал
+        </a>
+      </div>
+
+      <nav class="footer__col" aria-label="Разделы сайта">
+        <h4>Разделы</h4>
+        <a href="#about-conductor">Руководитель</a>
+        <a href="#choir">О хоре</a>
+        <a href="#why">Почему LARUS</a>
+        <a href="#concerts">События</a>
+        <a href="#gallery">Галерея</a>
+      </nav>
+
+      <div class="footer__col">
+        <h4>Связаться</h4>
+        <a href="https://t.me/laruschoir" target="_blank" rel="noopener">Телеграм · @laruschoir</a>
+        <a href="https://forms.gle/uyiLERGbSSLDqjfHA" target="_blank" rel="noopener">Анкета в хор</a>
+        <span>Москва, Окружной проезд, 18</span>
+        <span>Антарес Холл</span>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> Хор LARUS · Da capo al Cora</p>
+      <p class="footer__made">Сделано с любовью к музыке ♪</p>
+    </div>
+  </footer>
+
+  <!-- Кнопка «наверх» -->
+  <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+
+  <!-- Просмотр фото на весь экран -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Просмотр фотографии">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
