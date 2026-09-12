@@ -1088,7 +1088,7 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 .gallery__item {
