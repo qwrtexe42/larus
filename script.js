@@ -194,6 +194,31 @@ document.addEventListener('keydown', event => {
   }
 });
 
+// --- Полоса статистики: цифры «набегают» при появлении ---
+
+const statsSection = document.querySelector('.stats');
+if (statsSection) {
+  const statsObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      statsObserver.unobserve(entry.target);
+      entry.target.querySelectorAll('.stat__num[data-count]').forEach(el => {
+        const target = +el.dataset.count;
+        const start = performance.now();
+        const dur = 1700;
+        const tick = now => {
+          const p = Math.min((now - start) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * eased);
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    });
+  }, { threshold: 0.35 });
+  statsObserver.observe(statsSection);
+}
+
 // --- Лайтбокс: клик по фото в галерее открывает его на весь экран ---
 
 const lightbox = document.getElementById('lightbox');
