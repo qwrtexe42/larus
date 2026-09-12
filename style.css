@@ -124,7 +124,7 @@ body {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Unbounded', sans-serif;
 }
 .bg-note {
   position: absolute;
@@ -226,8 +226,8 @@ body:has(.preloader:not(.done)) { overflow: hidden; }
 }
 .preloader__name {
   margin-top: 22px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 38px;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 27px;
   font-weight: 700;
   letter-spacing: 0.5em;
   text-indent: 0.5em;
@@ -239,9 +239,9 @@ body:has(.preloader:not(.done)) { overflow: hidden; }
   to   { letter-spacing: 0.5em;  text-indent: 0.5em;  opacity: 1; }
 }
 .preloader__sub {
-  font-family: 'Marck Script', cursive;
-  font-size: 24px;
-  font-weight: 400;
+  font-family: 'Caveat', cursive;
+  font-size: 28px;
+  font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: none;
   color: rgba(250, 248, 244, 0.65);
@@ -324,14 +324,14 @@ body:has(.preloader:not(.done)) { overflow: hidden; }
   display: flex;
   flex-direction: column;
   line-height: 1.1;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 23px;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   color: var(--ink);
 }
 .logo__text small {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.22em;
@@ -406,8 +406,8 @@ body:has(.preloader:not(.done)) { overflow: hidden; }
   margin-bottom: 18px;
 }
 .hero__title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(42px, 5.6vw, 66px);
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(30px, 3.9vw, 48px);
   line-height: 1.15;
   margin-bottom: 22px;
   color: var(--ink);
@@ -573,8 +573,8 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
   margin-bottom: 10px;
 }
 .section__title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(34px, 4.6vw, 46px);
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(25px, 3.3vw, 37px);
   margin-bottom: 20px;
   color: var(--ink);
 }
@@ -611,7 +611,7 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
   opacity: 0.05;
   pointer-events: none;
   user-select: none;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Unbounded', sans-serif;
 }
 .note-mark--left {
   right: auto;
@@ -730,13 +730,89 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
   border-radius: 14px;
   background: var(--bg-soft);
   border: 1px solid rgba(35, 30, 24, 0.07);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Unbounded', sans-serif;
   font-size: 13.5px;
   line-height: 1.15;
   text-align: center;
   color: var(--ink);
   white-space: nowrap;
 }
+
+/* ---- Карточки команды ---- */
+
+.team {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 38px;
+}
+.team__card {
+  background: var(--white);
+  border-radius: 22px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(35, 30, 24, 0.07);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.team__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(35, 30, 24, 0.14);
+}
+.team__avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  object-fit: cover;
+  border: 4px solid var(--bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-soft);
+  color: var(--ink);
+  font-family: 'Unbounded', sans-serif;
+  font-size: 30px;
+}
+.team__card h3 {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 15px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.team__role {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brown);
+  margin-bottom: 12px;
+}
+.team__text {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Теги путешествий */
+.travel-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.travel-tags span {
+  background: var(--white);
+  border: 1px solid rgba(35, 30, 24, 0.09);
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+  transition: transform 0.25s;
+}
+.travel-tags span:hover { transform: translateY(-3px); }
 
 /* ---- Фото-карточки «фото + плашка с подписью» ---- */
 
@@ -771,7 +847,7 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
 .photo-card:hover .photo-card__img img { transform: scale(1.06); }
 .photo-card__body { padding: 24px 26px 28px; }
 .photo-card__body h3 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 17px;
   font-weight: 700;
   text-transform: uppercase;
@@ -849,8 +925,8 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
 }
 .card:hover .card__img img { transform: scale(1.06); }
 .card h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 17px;
   margin: 22px 24px 10px;
   color: var(--ink);
 }
@@ -897,8 +973,8 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
   background: var(--bg-soft);
 }
 .event__day {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 29px;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 21px;
   font-weight: 700;
   color: var(--ink);
   line-height: 1.1;
@@ -906,7 +982,7 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
 .event__month { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
 .event h3 { font-size: 18px; margin-bottom: 4px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; color: var(--ink); }
 .badge-premiere {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
@@ -965,15 +1041,15 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
 }
 .band__inner { position: relative; z-index: 1; }
 .band__quote {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(32px, 5vw, 52px);
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(24px, 3.5vw, 38px);
   line-height: 1.25;
   color: var(--bg);
   margin-bottom: 14px;
 }
 .band__author {
-  font-family: 'Marck Script', cursive;
-  font-size: 34px;
+  font-family: 'Caveat', cursive;
+  font-size: 44px;
   color: rgba(250, 248, 244, 0.85);
   margin: -6px 0 30px;
 }
@@ -1041,7 +1117,7 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
 /* Парящие ноты в панели */
 .join__note {
   position: absolute;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Unbounded', sans-serif;
   color: rgba(250, 248, 244, 0.14);
   pointer-events: none;
   user-select: none;
@@ -1075,7 +1151,7 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
   height: 34px;
   border-radius: 50%;
   border: 1.5px solid rgba(250, 248, 244, 0.4);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Unbounded', sans-serif;
   font-size: 16px;
   color: var(--bg);
   flex-shrink: 0;
@@ -1137,7 +1213,7 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
 }
 .mobile-menu.open { opacity: 1; pointer-events: auto; }
 .mobile-menu a {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Unbounded', sans-serif;
   font-size: 26px;
   color: var(--bg);
   text-decoration: none;
@@ -1155,14 +1231,14 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
 .mobile-menu.open a:nth-child(7) { transition-delay: 0.35s; }
 .mobile-menu.open a:nth-child(8) { transition-delay: 0.4s; }
 .mobile-menu a:hover { color: var(--brown); }
-.mobile-menu .btn { font-family: 'Inter', sans-serif; font-size: 15px; }
+.mobile-menu .btn { font-family: 'Nunito', sans-serif; font-size: 15px; }
 
 /* ---- Архив прошедших событий ---- */
 
 .archive__title {
   margin-top: 40px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 19px;
   margin-bottom: 14px;
   color: var(--ink);
 }
@@ -1237,8 +1313,8 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
   border-radius: 11px;
 }
 .footer__name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--bg);
@@ -1274,7 +1350,7 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
   gap: 11px;
 }
 .footer__col h4 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -1309,8 +1385,8 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
   color: rgba(250, 248, 244, 0.5);
 }
 .footer__made {
-  font-family: 'Marck Script', cursive;
-  font-size: 24px;
+  font-family: 'Caveat', cursive;
+  font-size: 30px;
 }
 
 /* ---- Кнопка «наверх» ---- */
@@ -1400,6 +1476,7 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
   .step__arrow { display: none; }
   .step__text { max-width: none; text-align: center; }
   .join__panel { padding: 48px 22px; }
+  .team { grid-template-columns: 1fr; }
   .footer { padding-top: 48px; }
   .footer__grid { grid-template-columns: 1fr; gap: 32px; padding-bottom: 36px; }
   .event { padding: 22px; gap: 18px; }
