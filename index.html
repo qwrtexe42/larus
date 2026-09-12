@@ -353,6 +353,20 @@
     </div>
   </section>
 
+  <!-- Живая лента из ВКонтакте -->
+  <section id="news" class="section section--soft">
+    <div class="container">
+      <p class="section__kicker">Новости</p>
+      <h2 class="section__title">Живая лента из ВКонтакте</h2>
+      <p class="section__lead">
+        Последние посты из нашей группы — анонсы, фото с концертов и закулисье.
+      </p>
+      <div class="vk-wrap">
+        <div id="vk_groups"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Цитата на фоне концерта -->
   <section class="band" aria-label="Цитата">
     <div class="container band__inner">
@@ -454,6 +468,9 @@
     <img src="" alt="Просмотр фотографии">
   </div>
 
-  <script src="script.js"></script>
+  <!-- Виджет ВКонтакте -->
+  <script src="https://vk.com/js/api/openapi.js?169" async onload="window.initVK && window.initVK()"></script>
+
+  <script src="script.js?v=6"></script>
 </body>
 </html>

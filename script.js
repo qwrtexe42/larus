@@ -194,6 +194,33 @@ document.addEventListener('keydown', event => {
   }
 });
 
+// --- Живая лента ВКонтакте ---
+
+window.initVK = function () {
+  if (!document.getElementById('vk_groups')) return;
+  try {
+    window.VK.Widgets.Group('vk_groups', {
+      mode: 4,          // новости группы
+      width: 'auto',
+      height: 780,
+      color1: '#faf8f4', // фон
+      color2: '#2c2a26', // текст
+      color3: '#8a6d52'  // кнопки
+    }, 2105336);
+  } catch (e) { /* виджет уже создан или скрипт не готов */ }
+};
+// запасной путь, если событие onload пропустили
+let vkTries = 0;
+const vkTimer = setInterval(() => {
+  vkTries++;
+  if (window.VK && window.VK.Widgets) {
+    clearInterval(vkTimer);
+    window.initVK();
+  } else if (vkTries > 200) {
+    clearInterval(vkTimer);
+  }
+}, 300);
+
 // --- Лайтбокс: клик по фото в галерее открывает его на весь экран ---
 
 const lightbox = document.getElementById('lightbox');
