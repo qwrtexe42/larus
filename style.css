@@ -4,8 +4,8 @@
    ============================================================ */
 
 :root {
-  --bg: #f0f6f2;            /* кремовый фон */
-  --bg-soft: #e2efe8;       /* бежевый для плашек и секций */
+  --bg: #e9f5ee;            /* кремовый фон */
+  --bg-soft: #d7ebdf;       /* бежевый для плашек и секций */
   --ink: #1d1a17;           /* почти чёрный */
   --text: #2c2a26;
   --muted: #6d675f;
@@ -33,10 +33,10 @@ body::before {
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background:
-    radial-gradient(1200px 800px at 85% -5%, rgba(255, 255, 255, 0.9), transparent 60%),
-    radial-gradient(1000px 750px at -10% 28%, rgba(206, 234, 219, 0.85), transparent 62%),
-    radial-gradient(950px 720px at 103% 80%, rgba(196, 228, 210, 0.7), transparent 60%),
-    linear-gradient(180deg, #f1f7f3 0%, #e9f3ec 55%, #dfeeE5 100%);
+    radial-gradient(1200px 800px at 85% -5%, rgba(255, 255, 255, 0.85), transparent 60%),
+    radial-gradient(1000px 750px at -10% 28%, rgba(178, 226, 202, 0.9), transparent 62%),
+    radial-gradient(950px 720px at 103% 80%, rgba(165, 220, 195, 0.75), transparent 60%),
+    linear-gradient(180deg, #ecf7f0 0%, #e0f1e7 55%, #d5ebdf 100%);
   color: var(--text);
   line-height: 1.65;
 }
