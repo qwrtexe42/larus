@@ -160,7 +160,8 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const portrait = document.querySelector('.portrait');
 if (portrait) {
   if (!window.matchMedia('(pointer: fine)').matches) {
-    portrait.querySelector('.portrait__hint').textContent = 'нажмите ✦';
+    const hint = portrait.querySelector('.portrait__hint');
+    if (hint) hint.textContent = 'нажмите ✦';
   }
   portrait.addEventListener('click', () => {
     portrait.classList.toggle('portrait--alt');
