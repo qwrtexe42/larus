@@ -4,8 +4,8 @@
    ============================================================ */
 
 :root {
-  --bg: #faf8f4;            /* кремовый фон */
-  --bg-soft: #f1ece4;       /* бежевый для плашек и секций */
+  --bg: #f0f6f2;            /* кремовый фон */
+  --bg-soft: #e2efe8;       /* бежевый для плашек и секций */
   --ink: #1d1a17;           /* почти чёрный */
   --text: #2c2a26;
   --muted: #6d675f;
@@ -34,9 +34,9 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   background:
     radial-gradient(1200px 800px at 85% -5%, rgba(255, 255, 255, 0.9), transparent 60%),
-    radial-gradient(1000px 750px at -10% 28%, rgba(239, 231, 217, 0.9), transparent 62%),
-    radial-gradient(950px 720px at 103% 80%, rgba(238, 230, 216, 0.75), transparent 60%),
-    linear-gradient(180deg, #f8f5ef 0%, #f3efe7 55%, #efe9df 100%);
+    radial-gradient(1000px 750px at -10% 28%, rgba(206, 234, 219, 0.85), transparent 62%),
+    radial-gradient(950px 720px at 103% 80%, rgba(196, 228, 210, 0.7), transparent 60%),
+    linear-gradient(180deg, #f1f7f3 0%, #e9f3ec 55%, #dfeeE5 100%);
   color: var(--text);
   line-height: 1.65;
 }
@@ -740,9 +740,18 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
   font-size: 14px;
 }
 
-.portrait {
-  position: relative;
+.team-photos {
+  display: grid;
+  gap: 16px;
 }
+.team-photos img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: block;
+  transition: transform 0.35s ease;
+}
+.team-photos img:hover { transform: scale(1.02); }
 .portrait__img {
   width: 100%;
   aspect-ratio: 3/4;
