@@ -4,8 +4,8 @@
    ============================================================ */
 
 :root {
-  --bg: #e9f5ee;            /* кремовый фон */
-  --bg-soft: #d7ebdf;       /* бежевый для плашек и секций */
+  --bg: #eef4f9;            /* кремовый фон */
+  --bg-soft: #ddebf5;       /* бежевый для плашек и секций */
   --ink: #1d1a17;           /* почти чёрный */
   --text: #2c2a26;
   --muted: #6d675f;
@@ -33,10 +33,10 @@ body::before {
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background:
-    radial-gradient(1200px 800px at 85% -5%, rgba(255, 255, 255, 0.85), transparent 60%),
-    radial-gradient(1000px 750px at -10% 28%, rgba(178, 226, 202, 0.9), transparent 62%),
-    radial-gradient(950px 720px at 103% 80%, rgba(165, 220, 195, 0.75), transparent 60%),
-    linear-gradient(180deg, #ecf7f0 0%, #e0f1e7 55%, #d5ebdf 100%);
+    radial-gradient(1200px 800px at 85% -5%, rgba(255, 255, 255, 0.9), transparent 60%),
+    radial-gradient(1000px 750px at -10% 28%, rgba(194, 221, 242, 0.9), transparent 62%),
+    radial-gradient(950px 720px at 103% 80%, rgba(180, 210, 236, 0.75), transparent 60%),
+    linear-gradient(180deg, #f0f6fb 0%, #e6eff8 55%, #d9e8f4 100%);
   color: var(--text);
   line-height: 1.65;
 }
@@ -314,30 +314,20 @@ body:has(.preloader:not(.done)) { overflow: hidden; }
   transition: transform 0.25s ease;
 }
 .logo:hover { transform: scale(1.03); }
+.logo__img {
+  height: 48px;
+  width: auto;
+  display: block;
+  transition: transform 0.25s ease;
+}
+.logo:hover .logo__img { transform: scale(1.04); }
 .logo__mark {
   width: 42px;
   height: 42px;
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(29, 26, 23, 0.22);
 }
-.logo__text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-  font-family: 'Unbounded', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--ink);
-}
-.logo__text small {
-  font-family: 'Nunito', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--brown);
-}
+
 .nav {
   display: flex;
   gap: 24px;
@@ -1584,4 +1574,15 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
   .note-mark--left { left: 0; }
   .section { padding: 64px 0; }
   .footer { padding: 30px 0; }
+}
+
+/* Плашка лого в подвале */
+img.footer__logo-chip {
+  height: 40px;
+  width: auto;
+  display: block;
+  background: #faf8f4;
+  border-radius: 12px;
+  padding: 8px 14px;
+  margin-bottom: 16px;
 }
