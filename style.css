@@ -952,19 +952,6 @@ body.loaded .hero__visual { animation: fadeUp 1.4s 0.7s ease both; }
 }
 .gallery__item:hover img { transform: scale(1.08); }
 
-/* ---- Живая лента ВКонтакте ---- */
-
-.vk-wrap {
-  max-width: 720px;
-  margin: 0 auto;
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 8px;
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(35, 30, 24, 0.07);
-}
-.vk-wrap iframe { border-radius: 12px; }
-
 /* ---- Цитата на фоне концерта ---- */
 
 .band {
